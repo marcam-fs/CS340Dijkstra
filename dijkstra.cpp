@@ -11,13 +11,13 @@
 using namespace std;
 
 const int MAX_VERTEX = 100;
-void addEdge(int matrix[][MAX_VERTEX], int s, int d, int w);
+void addEdge(int matrix[][MAX_VERTEX], int s, int d, double w);
 void printGraph(int matrix[][MAX_VERTEX], int n);
 
 int main()
 {
 
-    int matrix[MAX_VERTEX][MAX_VERTEX];
+    double matrix[MAX_VERTEX][MAX_VERTEX];
 
     //Prompt user to enter number of vertices in graph
     int vertices;
@@ -27,7 +27,9 @@ int main()
     int edges;
     cout << "Enter the number of edges: ";
     cin >> edges;
-    int s, d, w;
+    int s, d;
+    double w;
+
     for (int i = 0; i < edges; i++)
     {
         cout << "Enter the source node, destination node, and weight: ";
@@ -41,12 +43,12 @@ int main()
 }
 
 
-void addEdge(int matrix[][MAX_VERTEX], int s, int d, int w)
+void addEdge(double matrix[][MAX_VERTEX], int s, int d, double w)
 {
     matrix[s][d] = w;
 }
 
-void printGraph(int matrix[][MAX_VERTEX], int n)
+void printGraph(double matrix[][MAX_VERTEX], int n)
 {
     for (int i = 0; i < n; i++)
     {
